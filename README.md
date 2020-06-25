@@ -1,2 +1,4 @@
 # completely_fair_scheduler
 Implementation of the multimap ADT using a LLRB along with Google-style unit-testing. Program that receives a file of unordered task descriptions and feeds them into the CFS scheduler strategy.
+
+The logic of cfs_sched.cc starts at the main method before flowing to respective methods which handle the various operations. The main method first performs error checking to ensure that a data file with tasks is passed in. It first calls checkFileStream() to make sure that the file is opened properly, and then storeData() to store the task data (id, start_time, duration) in a Task* vector. A Task class is made to hold its 3 primary variables along with runtime & vruntime and public accessors. Then, organizeTasks() is called to sort tasks with equal start times by id in alphabetical order. Finally, runCFS() is called which applies the CFS algorithm on tasks.
